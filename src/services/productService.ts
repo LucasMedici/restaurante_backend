@@ -1,7 +1,7 @@
 import { dbConfig } from "../config/dbConfig";
 import { Product } from "../models/productModel";
 
-export default class productService{
+export default class ProductService{
     private productRepository = dbConfig.getRepository(Product)
 
     async createProduct(product: Product) {
