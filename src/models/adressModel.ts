@@ -1,30 +1,30 @@
-import {PrimaryColumn, Column, Entity, ManyToOne} from "typeorm";
+import {PrimaryGeneratedColumn, Column, Entity, ManyToOne} from "typeorm";
 import { User } from "./userModel";
 
 
 @Entity()
 export class Adress{
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     adress_id!: number;
 
-    @Column()
+    @Column({nullable: false})
     adress_street!: string;
 
-    @Column()
+    @Column({nullable: false})
     adress_number!: number;
 
     @Column()
     adress_complemento!: string;
 
-    @Column()
+    @Column({nullable: false})
     adress_bairro!: string;
 
-    @Column()
+    @Column({nullable: false})
     adress_cep!: string;
 
 
-    @ManyToOne(() => User, user => user.adress)
+    @ManyToOne(() => User, user => user.adress, {nullable: false})
     user!: User;
 
 }

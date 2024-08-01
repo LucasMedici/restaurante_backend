@@ -7,19 +7,19 @@ export class User{
     @PrimaryGeneratedColumn()
     user_id!: number;
 
-    @Column()
+    @Column({nullable: false})
     user_name!: string;
 
-    @Column()
+    @Column({nullable: false})
     user_email!: string;
 
-    @Column()
+    @Column({nullable: false})
     user_password!: string;
 
-    @Column()
+    @Column({nullable: false})
     user_cpf!: string;
 
-    @Column()
+    @Column({nullable: false})
     user_tel!: string;
 
     @OneToMany(() => Adress, adress => adress.user)

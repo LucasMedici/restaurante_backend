@@ -1,21 +1,21 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Product {
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     product_id!: number;
 
-    @Column()
+    @Column({nullable: false})
     product_name!: string;
 
     @Column()
     product_desc!: string;
 
-    @Column()
+    @Column({nullable: false})
     product_price!: number;
 
-    @Column()
+    @Column({nullable: false})
     product_isEnable!: boolean;
 
 

@@ -11,7 +11,7 @@ export class UserController{
     public async createUser(req: Request, res: Response) {
         try{
             const newUser = await userService.createUser(req.body)
-            return res.status(201).json('New User created!: '+ newUser);
+            return res.status(201).json(newUser);
         }catch(error){
             res.status(500).json({message: 'Error creating a new user: '+ error});
         }
@@ -22,7 +22,7 @@ export class UserController{
             const users = await userService.getAllUsers();
             return res.status(200).json(users);
         }catch(error){
-            res.status(500).json({message: 'Error getting users: '+ error});
+            res.status(500).json(error);
         }
     }
 
@@ -36,7 +36,7 @@ export class UserController{
             }
             return res.status(200).json(user);
         }catch(error){
-            res.status(500).json({message: 'Error getting user: '+ error});
+            res.status(500).json(error);
         }
     }
 
@@ -54,7 +54,7 @@ export class UserController{
 
 
         }catch(error){
-            res.status(500).json({message: 'Error updating user: '+ error});
+            res.status(500).json(error);
         }
     }
 
@@ -71,7 +71,7 @@ export class UserController{
             await userService.deleteUser(userId);
             return res.status(200).json({message: 'User deleted'});
         }catch(error){
-            res.status(500).json({message: 'Error deleting user: '+ error});
+            res.status(500).json(error);
         }
     }
 

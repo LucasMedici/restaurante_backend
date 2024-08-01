@@ -10,9 +10,9 @@ export class AdressController{
     public async createAdress(req: Request, res: Response){
         try{
             const newAdress = await adressService.createAdress(req.body)
-            return res.status(201).json('New Adress created!'+ newAdress)
+            return res.status(201).json(newAdress)
         }catch(error){
-            res.status(500).json({message: 'Error creating a new adress: '+ error})
+            res.status(500).json(error)
         }
     }
 
@@ -22,7 +22,7 @@ export class AdressController{
             const addresses = await adressService.getAllAdress()
             return res.status(200).json(addresses)
         }catch(error){
-            res.status(500).json({message: 'Error getting addresses: '+ error})
+            res.status(500).json(error)
         }
     }
 
@@ -38,7 +38,7 @@ export class AdressController{
             return res.status(200).json(adress)
 
         }catch(error){
-            res.status(500).json({message: 'Error getting adress: '+ error})
+            res.status(500).json(error)
         }
     }
 
@@ -56,7 +56,7 @@ export class AdressController{
             await adressService.updateAdress(adressId, updatedInfo)
             return res.status(200).json({message: 'Adress updated'})
         }catch(error){
-            res.status(500).json({message: 'Error updating adress: '+ error})
+            res.status(500).json(error)
         }
     }
 
@@ -75,7 +75,7 @@ export class AdressController{
             return res.status(200).json({message: 'Adress deleted'})
 
         }catch(error){
-            res.status(500).json({message: 'Error deleting adress: '+ error})
+            res.status(500).json(error)
         }
     }
 }
