@@ -3,6 +3,7 @@ import { DataSource } from "typeorm"
 import { Product } from "../models/productModel"
 import { User } from "../models/userModel"
 import { Adress } from "../models/adressModel"
+import { Pedido } from "../models/pedidoModel"
 
 export const dbConfig = new DataSource({    
     type:'postgres',
@@ -13,7 +14,7 @@ export const dbConfig = new DataSource({
     database: "db_restaurante",
     synchronize: true,
     logging: true,
-    entities: [Product, User, Adress],
+    entities: [Product, User, Adress, Pedido],
     subscribers: [],
     migrations: [],
 
