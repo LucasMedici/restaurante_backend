@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { ProductsInOrder } from "./productsInOrdersModel";
+import { Order } from "./orderModel";
 
 @Entity()
 export class Product {
@@ -17,6 +19,10 @@ export class Product {
 
     @Column({nullable: false})
     product_isEnable!: boolean;
+
+
+    @OneToMany(() => ProductsInOrder, productsInOrder => productsInOrder.product)
+    order!: Order[];
 
 
 }

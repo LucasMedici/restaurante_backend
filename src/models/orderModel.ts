@@ -1,6 +1,7 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./userModel";
 import { Adress } from "./adressModel";
+import { ProductsInOrder } from "./productsInOrdersModel";
 
 @Entity()
 export class Order{
@@ -23,4 +24,8 @@ export class Order{
     @ManyToOne(() => Adress, adress => adress.order, {nullable: false})
     @JoinColumn({name: 'adress_id'}) // ALTERANDO NOME QUE SERA EXIBIDO NA TABELA
     adress!: Adress;
+
+
+    @OneToMany(() => ProductsInOrder, productsInOrder => productsInOrder.order)
+    order!: Order[];
 }
