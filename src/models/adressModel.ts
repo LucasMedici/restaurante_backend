@@ -1,6 +1,6 @@
 import {PrimaryGeneratedColumn, Column, Entity, ManyToOne, OneToMany} from "typeorm";
 import { User } from "./userModel";
-import { Pedido } from "./pedidoModel";
+import { Order } from "./orderModel";
 
 
 @Entity()
@@ -31,7 +31,7 @@ export class Adress{
 
 
 
-    @OneToMany(() => Pedido, pedido => pedido.adress)
-    pedido!: Pedido[];
+    @OneToMany(() => Order, order => order.adress)
+    order!: Order[];
 
 }

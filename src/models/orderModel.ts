@@ -3,7 +3,7 @@ import { User } from "./userModel";
 import { Adress } from "./adressModel";
 
 @Entity()
-export class Pedido{
+export class Order{
 
 
     @PrimaryGeneratedColumn()
@@ -16,11 +16,11 @@ export class Pedido{
     order_value!: number;
 
 
-    @ManyToOne(() => User, user => user.pedido, {nullable: false})
+    @ManyToOne(() => User, user => user.order, {nullable: false})
     @JoinColumn({name: 'user_id'}) // ALTERANDO NOME QUE SERA EXIBIDO NA TABELA
     user!: User; 
 
-    @ManyToOne(() => Adress, adress => adress.pedido, {nullable: false})
+    @ManyToOne(() => Adress, adress => adress.order, {nullable: false})
     @JoinColumn({name: 'adress_id'}) // ALTERANDO NOME QUE SERA EXIBIDO NA TABELA
     adress!: Adress;
 }
