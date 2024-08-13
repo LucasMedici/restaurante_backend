@@ -4,9 +4,6 @@ import { Order } from "./orderModel";
 
 @Entity()
 export class Product {
-    map(arg0: (p: any) => void) {
-        throw new Error("Method not implemented.");
-    }
 
     @PrimaryGeneratedColumn()
     product_id!: number;

@@ -1,4 +1,4 @@
-import { dbConfig } from "../config/dbConfig";
+import { dbConfig } from "../infra/dbConfig/dbConfig";
 import { Product } from "../models/productModel";
 
 export default class ProductService{

@@ -20,7 +20,7 @@ Este repositório contém o backend para o projeto de restaurante, desenvolvido 
 
 ## Futuros Objetivos 
 
-- [ ] Backend Completo 
+- [X] Backend Completo 
 - [ ] RabbitMQ inserido no projeto 
 - [ ] Testes Unitarios inseridos no projeto
 - [ ] Docker Compose inserido no projeto

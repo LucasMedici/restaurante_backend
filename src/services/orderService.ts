@@ -1,4 +1,4 @@
-import { dbConfig } from "../config/dbConfig";
+import { dbConfig } from "../infra/dbConfig/dbConfig";
 import { Order } from "../models/orderModel";
 
 export default class OrderService{

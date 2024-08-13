@@ -1,4 +1,4 @@
-import { dbConfig } from "../config/dbConfig";
+import { dbConfig } from "../infra/dbConfig/dbConfig";
 import { userCreateDTO } from "../dtos/userCreateDTO";
 import { userUpdateDTO } from "../dtos/userUpdateDTO";
 import { User } from "../models/userModel";
