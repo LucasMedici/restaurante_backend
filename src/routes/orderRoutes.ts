@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { OrderController } from "../controllers/pedidoController";
+import { OrderController } from "../controllers/orderController";
 
 const orderRouter = Router();
 const orderController = new OrderController();

@@ -16,3 +16,12 @@ Este repositório contém o backend para o projeto de restaurante, desenvolvido 
    cd restaurante_backend
    npm install
    npm run dev
+
+
+## Futuros Objetivos 
+
+- [ ] Backend Completo 
+- [ ] RabbitMQ inserido no projeto 
+- [ ] Testes Unitarios inseridos no projeto
+- [ ] Docker Compose inserido no projeto
+
