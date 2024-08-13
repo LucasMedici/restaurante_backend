@@ -9,7 +9,7 @@ const productsInOrderService = new ProductsInOrderService();
 
 export default class BuyService{
 
-    async createANewBuy(order: Order, products:any){
+    async createANewBuy(order: Order, products:any[]){
         try{
             const createdOrder = await orderService.createOrder(order)
             const orderId = createdOrder.order_id
@@ -17,20 +17,20 @@ export default class BuyService{
             if (!orderId) {
                 throw new Error("Order ID is not defined");
             }
-
             
             for (const product of products) {
                 const productDTO = {
-                    order_id: orderId,
-                    product_id: product.product_id,
+                    order: orderId,
+                    product: product.product_id,
                     amount: product.amount,
                     product_value: product.product_value,
                     product_total_value: (product.amount * product.product_value),
         
                 };
-                console.log(productDTO)
                 await productsInOrderService.createProductInOrder(productDTO);
             }
+
+            return createdOrder;
 
         }catch(error)   {
             console.error("Error creating a new buy:", error);

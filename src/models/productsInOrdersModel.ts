@@ -12,12 +12,12 @@ export class ProductsInOrder {
     amount!: number;
 
 
-    @ManyToOne(() => Order, order => order.order_id, {nullable: false})
+    @ManyToOne(() => Order, order => order.order_id, {nullable: true})
     @JoinColumn({name: 'order_id'}) // ALTERANDO NOME QUE SERA EXIBIDO NA TABELA
     order!: Order; 
 
 
-    @ManyToOne(() => Product, product => product.product_id, {nullable: false})
+    @ManyToOne(() => Product, product => product.product_id, {nullable: true})
     @JoinColumn({name: 'product_id'}) // ALTERANDO NOME QUE SERA EXIBIDO NA TABELA
     product!: Product; 
 

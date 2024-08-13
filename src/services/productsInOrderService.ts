@@ -1,12 +1,11 @@
 import { dbConfig } from "../config/dbConfig"
 import { ProductsInOrder } from "../models/productsInOrdersModel"
-import { ProductsInOrderCreateDTO } from "../dtos/productsInOrderCreateDTO"
 
 
 export default class ProductsInOrderService{
     private productsInOrderRepository = dbConfig.getRepository(ProductsInOrder)
 
-    async createProductInOrder(productInOrder: ProductsInOrderCreateDTO){
+    async createProductInOrder(productInOrder: any){
         await this.productsInOrderRepository.save(productInOrder)
         return productInOrder
     }
