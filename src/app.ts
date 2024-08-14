@@ -2,7 +2,7 @@ import express from 'express';
 import routes from './routes/routes';
 import 'reflect-metadata';
 import { dbConfig } from './infra/dbConfig/dbConfig';
-import startConsumer from './infra/rabbitMQ/orderConsumer';
+
 
 
 const app =  express();
@@ -14,8 +14,6 @@ async function startServer() {
         await dbConfig.initialize();
         console.log('Database connected');
 
-        await startConsumer();
-        console.log('RabbitMQ connected');
 
         app.use(express.json());
         app.use(routes);

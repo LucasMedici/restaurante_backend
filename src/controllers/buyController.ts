@@ -16,4 +16,5 @@ export class BuyController{
             res.status(500).json(error)
         }
     }
+
 }
