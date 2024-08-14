@@ -15,7 +15,6 @@ async function startConsumer() {
                 channel.ack(msg)
             }
         })
-
     }catch(error){
         console.error('Erro ao conectar o Consumer no RabbitMQ: ', error)
     }
